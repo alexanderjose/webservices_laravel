@@ -29,9 +29,10 @@ class SerialController extends Controller
       return $listado_seriales;
   }
 
-  public function detalle(Serial $serial)
+  public function detalle($id)
   {
-      return $serial;
+    $serial = Serial::find($id);
+    return $serial;
   }
 
   public function getCombosFiltros($tipo_solicitud, $estatus_solicitud)
